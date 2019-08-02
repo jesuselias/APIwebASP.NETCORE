@@ -46,7 +46,7 @@ namespace APIWeb.Controllers
 
             return user;
         }
-        // POST: api/Todo
+        // POST: api/users
         [HttpPost]
         public async Task<ActionResult<user>> Postuser(user u)
         {
@@ -55,7 +55,7 @@ namespace APIWeb.Controllers
 
             return CreatedAtAction(nameof(Getuser), new { id = u.userId }, u);
         }
-        // PUT: api/Todo/5
+        // PUT: api/users/5
         [HttpPut("{id}")]
         public async Task<IActionResult> Putuser(long id, user item)
         {
@@ -69,6 +69,7 @@ namespace APIWeb.Controllers
 
             return NoContent();
         }
+        // DELETE: api/users/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> Deleteuser(long id)
         {

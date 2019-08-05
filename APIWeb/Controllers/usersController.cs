@@ -8,7 +8,7 @@ using APIWeb.Models;
 
 namespace APIWeb.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/users")]
     [ApiController]
     public class usersController : ControllerBase
     {
@@ -22,7 +22,7 @@ namespace APIWeb.Controllers
             {
                 // Create a new TodoItem if collection is empty,
                 // which means you can't delete all TodoItems.
-                _context.users.Add(new user { UserName="jesus92", Name = "jesus", LastName = "Enrique", Age = 27 });
+                _context.users.Add(new user { UserName="jesus92", Name = "jesus", LastName = "enrique", Age = 27 });
                 _context.SaveChanges();
             }
         }
@@ -53,13 +53,13 @@ namespace APIWeb.Controllers
             _context.users.Add(u);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(Getuser), new { id = u.userId }, u);
+            return CreatedAtAction(nameof(Getuser), new { id = u.Id }, u);
         }
         // PUT: api/users/5
         [HttpPut("{id}")]
         public async Task<IActionResult> Putuser(long id, user item)
         {
-            if (id != item.userId)
+            if (id != item.Id)
             {
                 return BadRequest();
             }

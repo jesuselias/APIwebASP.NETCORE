@@ -1,0 +1,14 @@
+C:\Users\Tra&MarConsulting\Desktop\Aprendizaje .Net\APIWeb\APIWeb\bin\Release\netcoreapp2.2\APIWeb.deps.json
+C:\Users\Tra&MarConsulting\Desktop\Aprendizaje .Net\APIWeb\APIWeb\bin\Release\netcoreapp2.2\APIWeb.runtimeconfig.json
+C:\Users\Tra&MarConsulting\Desktop\Aprendizaje .Net\APIWeb\APIWeb\bin\Release\netcoreapp2.2\APIWeb.runtimeconfig.dev.json
+C:\Users\Tra&MarConsulting\Desktop\Aprendizaje .Net\APIWeb\APIWeb\bin\Release\netcoreapp2.2\APIWeb.dll
+C:\Users\Tra&MarConsulting\Desktop\Aprendizaje .Net\APIWeb\APIWeb\bin\Release\netcoreapp2.2\APIWeb.pdb
+C:\Users\Tra&MarConsulting\Desktop\Aprendizaje .Net\APIWeb\APIWeb\obj\Release\netcoreapp2.2\APIWeb.csprojAssemblyReference.cache
+C:\Users\Tra&MarConsulting\Desktop\Aprendizaje .Net\APIWeb\APIWeb\obj\Release\netcoreapp2.2\APIWeb.csproj.CoreCompileInputs.cache
+C:\Users\Tra&MarConsulting\Desktop\Aprendizaje .Net\APIWeb\APIWeb\obj\Release\netcoreapp2.2\APIWeb.RazorAssemblyInfo.cache
+C:\Users\Tra&MarConsulting\Desktop\Aprendizaje .Net\APIWeb\APIWeb\obj\Release\netcoreapp2.2\APIWeb.RazorAssemblyInfo.cs
+C:\Users\Tra&MarConsulting\Desktop\Aprendizaje .Net\APIWeb\APIWeb\obj\Release\netcoreapp2.2\APIWeb.AssemblyInfoInputs.cache
+C:\Users\Tra&MarConsulting\Desktop\Aprendizaje .Net\APIWeb\APIWeb\obj\Release\netcoreapp2.2\APIWeb.AssemblyInfo.cs
+C:\Users\Tra&MarConsulting\Desktop\Aprendizaje .Net\APIWeb\APIWeb\obj\Release\netcoreapp2.2\APIWeb.RazorTargetAssemblyInfo.cache
+C:\Users\Tra&MarConsulting\Desktop\Aprendizaje .Net\APIWeb\APIWeb\obj\Release\netcoreapp2.2\APIWeb.dll
+C:\Users\Tra&MarConsulting\Desktop\Aprendizaje .Net\APIWeb\APIWeb\obj\Release\netcoreapp2.2\APIWeb.pdb

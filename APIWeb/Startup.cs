@@ -12,7 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
 using APIWeb.Models;
-
+using Microsoft.AspNetCore.Http;
 
 namespace APIWeb
 {
@@ -28,9 +28,21 @@ namespace APIWeb
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<TodoContext>(opt =>
+            /*services.AddDbContext<TodoContext>(opt =>
                 opt.UseInMemoryDatabase("TodoList"));
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);*/
+
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddDbContext<TodoContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("SistemaContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

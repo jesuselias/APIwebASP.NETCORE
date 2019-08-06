@@ -6,30 +6,6 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAASjm06zxVPkyACiHkpd7MtQAAAAACAAAAAAAQZgAAAAEAACAAAABQl0zVlI8wqc2DaRNbC6rH2ZEen/CYibENOLUeHR3ZngAAAAAOgAAAAAIAACAAAACczmDuDDywK3HgkgR0HtY+N3Y++HM4Zk7XZMZY1hjT24AAAADI4ikuyY8mZm/7LRzOdfBcfsK0OFRu+FHb1kgDC3AfM1gfkXLLOo+macVAeerBKZ02Ba5jjhj03gQHrPM/43hQwy6Y0c7Z740IpMrDYFO3K75D39sFmYVoBxDhWI1eIChnQSgHkcqJzHvm2az3er2wvbntG5DzhtiNBGegZiaTzUAAAABpJeF3cfaQJ51xLgXcGp0VELwVTlLrLwY76JDct+BE8ybLmXG/zZ61E/4Xq26pKb0TMSbi43SkZr92E+nC480/</EncryptedPassword>
-    <_PublishTargetUrl>ftp://waws-prod-bn1-047.ftp.azurewebsites.windows.net/site/wwwroot</_PublishTargetUrl>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAASjm06zxVPkyACiHkpd7MtQAAAAACAAAAAAAQZgAAAAEAACAAAADVza5X5pERWts2lS/sqBdYLRFvUP92Ok17g7d+oZHHpAAAAAAOgAAAAAIAACAAAACL5IWL0u6GHWtG7erh5smgqG6bBLa/0XHqmmKTFlsW/4AAAAAU0YgxMTIbV6WiNjVEpzSnlPqlal37y+DI8YkGGeuVD91osKCK6HCu+/pxDQIdHI59aZm1fafdm3TrGtZuDsUXcWhXLZUQtnU+RsKlYxpdA0j5qY9za5eisgth5czM3l2HnFHgkx+a0Z41WDlyCWREly7nrTHMsjbSwyscF0q41UAAAABW47/OWXp9MgBr/SxXuiLvFrxlNxWc2OtDex2tOAribbnW/lwTObU43hcHBPvZ23Brt5l2Li0CTgHEhA81jS5+</EncryptedPassword>
   </PropertyGroup>
-  <ItemGroup>
-    <File Include="APIWeb.deps.json">
-      <publishTime>08/05/2019 16:41:40</publishTime>
-    </File>
-    <File Include="APIWeb.dll">
-      <publishTime>05/08/2019 16:40:59</publishTime>
-    </File>
-    <File Include="APIWeb.pdb">
-      <publishTime>05/08/2019 16:40:59</publishTime>
-    </File>
-    <File Include="APIWeb.runtimeconfig.json">
-      <publishTime>08/05/2019 16:41:40</publishTime>
-    </File>
-    <File Include="appsettings.Development.json">
-      <publishTime>05/08/2019 16:38:49</publishTime>
-    </File>
-    <File Include="appsettings.json">
-      <publishTime>08/02/2019 10:00:21</publishTime>
-    </File>
-    <File Include="web.config">
-      <publishTime>08/05/2019 16:41:40</publishTime>
-    </File>
-  </ItemGroup>
 </Project>

@@ -41,8 +41,8 @@ namespace APIWeb
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddDbContext<TodoContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("SistemaContext")));
+            services.AddDbContext<userContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("BaseContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -12,16 +12,16 @@ namespace APIWeb.Controllers
     [ApiController]
     public class usersController : ControllerBase
     {
-        private readonly TodoContext _context;
+        private readonly userContext _context;
 
-        public usersController(TodoContext context)
+        public usersController(userContext context)
         {
             _context = context;
 
             if (_context.users.Count() == 0)
             {
-                // Create a new TodoItem if collection is empty,
-                // which means you can't delete all TodoItems.
+                // Create a new user if collection is empty,
+                // which means you can't delete all users.
                 _context.users.Add(new user { UserName="jesus92", Name = "jesus", LastName = "enrique", Age = 27 });
                 _context.SaveChanges();
             }

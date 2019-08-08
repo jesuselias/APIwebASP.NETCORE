@@ -41,7 +41,7 @@ namespace APIWeb
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddDbContext<userContext>(options =>
+            services.AddDbContext<context>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("BaseContext")));
         }
 

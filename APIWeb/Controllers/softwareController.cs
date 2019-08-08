@@ -8,56 +8,56 @@ using APIWeb.Models;
 
 namespace APIWeb.Controllers
 {
-    [Route("api/users")]
+    [Route("api/software")]
     [ApiController]
-    public class usersController : ControllerBase
+    public class sotwareController : ControllerBase
     {
         private readonly context _context;
 
-        public usersController(context context)
+        public sotwareController(context context)
         {
             _context = context;
 
-            if (_context.users.Count() == 0)
+            if (_context.software.Count() == 0)
             {
                 // Create a new user if collection is empty,
                 // which means you can't delete all users.
-                _context.users.Add(new user { UserName="jesus92", Name = "jesus", LastName = "enrique", Age = 27 });
+                _context.software.Add(new software { SoftwareName = "prueba1" });
                 _context.SaveChanges();
             }
         }
-        // GET: api/users
+        // GET: api/softwares
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<user>>> Getusers()
+        public async Task<ActionResult<IEnumerable<software>>> Getsoftwares()
         {
-            return await _context.users.ToListAsync();
+            return await _context.software.ToListAsync();
         }
 
-        // GET: api/users/5
+        // GET: api/softwares/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<user>> Getsoftware(long id)
+        public async Task<ActionResult<software>> Getsoftware(long id)
         {
-            var user = await _context.users.FindAsync(id);
+            var software = await _context.software.FindAsync(id);
 
-            if (user == null)
+            if (software == null)
             {
                 return NotFound();
             }
 
-            return user;
+            return software;
         }
-        // POST: api/users
+        // POST: api/software
         [HttpPost]
-        public async Task<ActionResult<user>> Postsoftware(user u)
+        public async Task<ActionResult<user>> Postsoftware(software u)
         {
-            _context.users.Add(u);
+            _context.software.Add(u);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(nameof(Getsoftware), new { id = u.Id }, u);
         }
-        // PUT: api/softwares/5
+        // PUT: api/software/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> Putuser(long id, user item)
+        public async Task<IActionResult> Putsoftware(long id, software item)
         {
             if (id != item.Id)
             {
@@ -69,18 +69,18 @@ namespace APIWeb.Controllers
 
             return NoContent();
         }
-        // DELETE: api/softwares/5
+        // DELETE: api/software/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Deleteuser(long id)
+        public async Task<IActionResult> Deletesoftware(long id)
         {
-            var user = await _context.users.FindAsync(id);
+            var software = await _context.software.FindAsync(id);
 
-            if (user == null)
+            if (software == null)
             {
                 return NotFound();
             }
 
-            _context.users.Remove(user);
+            _context.software.Remove(software);
             await _context.SaveChangesAsync();
 
             return NoContent();

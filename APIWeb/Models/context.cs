@@ -6,13 +6,17 @@ using Microsoft.EntityFrameworkCore;
 
 namespace APIWeb.Models
 {
-    public class TodoContext : DbContext
+    public class context : DbContext
     {
-        public TodoContext(DbContextOptions<TodoContext> options)
-            : base(options)
+        public context(DbContextOptions<context> options)
+          : base(options)
         {
         }
 
         public DbSet<user> users { get; set; }
+
+        public DbSet<hardware> hardware { get; set; }
+
+        public DbSet<software> software { get; set; }
     }
 }

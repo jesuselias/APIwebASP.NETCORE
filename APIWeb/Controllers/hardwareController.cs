@@ -8,56 +8,56 @@ using APIWeb.Models;
 
 namespace APIWeb.Controllers
 {
-    [Route("api/users")]
+    [Route("api/hardware")]
     [ApiController]
-    public class usersController : ControllerBase
+    public class hardwareController : ControllerBase
     {
         private readonly context _context;
 
-        public usersController(context context)
+        public hardwareController(context context)
         {
             _context = context;
 
-            if (_context.users.Count() == 0)
+            if (_context.hardware.Count() == 0)
             {
                 // Create a new user if collection is empty,
                 // which means you can't delete all users.
-                _context.users.Add(new user { UserName="jesus92", Name = "jesus", LastName = "enrique", Age = 27 });
+                _context.hardware.Add(new hardware {  HardwareName = "prueba2" });
                 _context.SaveChanges();
             }
         }
-        // GET: api/users
+        // GET: api/hardware
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<user>>> Getusers()
+        public async Task<ActionResult<IEnumerable<hardware>>> Gethardwares()
         {
-            return await _context.users.ToListAsync();
+            return await _context.hardware.ToListAsync();
         }
 
-        // GET: api/users/5
+        // GET: api/hardware/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<user>> Getsoftware(long id)
+        public async Task<ActionResult<hardware>> Gethardware(long id)
         {
-            var user = await _context.users.FindAsync(id);
+            var hardware = await _context.hardware.FindAsync(id);
 
-            if (user == null)
+            if (hardware == null)
             {
                 return NotFound();
             }
 
-            return user;
+            return hardware;
         }
-        // POST: api/users
+        // POST: api/hardware
         [HttpPost]
-        public async Task<ActionResult<user>> Postsoftware(user u)
+        public async Task<ActionResult<hardware>> Posthardware(hardware u)
         {
-            _context.users.Add(u);
+            _context.hardware.Add(u);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(Getsoftware), new { id = u.Id }, u);
+            return CreatedAtAction(nameof(Gethardware), new { id = u.Id }, u);
         }
-        // PUT: api/softwares/5
+        // PUT: api/hardware/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> Putuser(long id, user item)
+        public async Task<IActionResult> Puthardware(long id, hardware item)
         {
             if (id != item.Id)
             {
@@ -69,18 +69,18 @@ namespace APIWeb.Controllers
 
             return NoContent();
         }
-        // DELETE: api/softwares/5
+        // DELETE: api/hardware/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Deleteuser(long id)
+        public async Task<IActionResult> Deletehardware(long id)
         {
-            var user = await _context.users.FindAsync(id);
+            var hardware = await _context.users.FindAsync(id);
 
-            if (user == null)
+            if (hardware == null)
             {
                 return NotFound();
             }
 
-            _context.users.Remove(user);
+            _context.users.Remove(hardware);
             await _context.SaveChangesAsync();
 
             return NoContent();

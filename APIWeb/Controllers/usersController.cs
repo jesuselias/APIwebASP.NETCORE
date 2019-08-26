@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using APIWeb.Models;
+using Microsoft.AspNetCore.Cors;
 
 namespace APIWeb.Controllers
 {
@@ -35,7 +36,7 @@ namespace APIWeb.Controllers
 
         // GET: api/users/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<user>> Getsoftware(long id)
+        public async Task<ActionResult<user>> Getusers(long id)
         {
             var user = await _context.users.FindAsync(id);
 
@@ -47,13 +48,14 @@ namespace APIWeb.Controllers
             return user;
         }
         // POST: api/users
+        //[EnableCors("AnotherPolicy")]
         [HttpPost]
-        public async Task<ActionResult<user>> Postsoftware(user u)
+        public async Task<ActionResult<user>> Postusers(user u)
         {
             _context.users.Add(u);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(Getsoftware), new { id = u.Id }, u);
+            return CreatedAtAction(nameof(Getusers), new { id = u.Id }, u);
         }
         // PUT: api/softwares/5
         [HttpPut("{id}")]

@@ -13,6 +13,8 @@ using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
 using APIWeb.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Cors.Infrastructure;
+using APIWeb.Data;
 
 namespace APIWeb
 {
@@ -23,6 +25,7 @@ namespace APIWeb
             Configuration = configuration;
         }
 
+       // readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -32,6 +35,7 @@ namespace APIWeb
                 opt.UseInMemoryDatabase("TodoList"));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);*/
 
+            services.AddScoped<AssignmentsRepository>();
             services.Configure<CookiePolicyOptions>(options =>
             {
 
@@ -43,6 +47,27 @@ namespace APIWeb
 
             services.AddDbContext<context>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("BaseContext")));
+
+            /*services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                    builder =>
+                    {
+
+                        builder.WithOrigins("http://localhost:4200");
+                    });
+
+                options.AddPolicy("AnotherPolicy",
+                    builder =>
+                    {
+                        builder.WithOrigins("http://localhost:4200")
+                                            .AllowAnyHeader()
+                                            .AllowAnyMethod();
+                    });
+
+            });*/
+
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,11 +77,18 @@ namespace APIWeb
             {
                 app.UseDeveloperExceptionPage();
             }
+
+
             else
             {
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            app.UseCors(option =>
+            option.WithOrigins("http://localhost:4200")
+            .AllowAnyMethod()
+            .AllowAnyHeader());
 
             app.UseHttpsRedirection();
             app.UseMvc();

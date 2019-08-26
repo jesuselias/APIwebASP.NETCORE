@@ -28,7 +28,7 @@ namespace APIWeb.Controllers
         }
         // GET: api/softwares
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<software>>> Getsoftwares()
+        public async Task<ActionResult<IEnumerable<software>>> Getsoftware()
         {
             return await _context.software.ToListAsync();
         }

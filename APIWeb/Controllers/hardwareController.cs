@@ -73,14 +73,14 @@ namespace APIWeb.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Deletehardware(long id)
         {
-            var hardware = await _context.users.FindAsync(id);
+            var hardware = await _context.hardware.FindAsync(id);
 
             if (hardware == null)
             {
                 return NotFound();
             }
 
-            _context.users.Remove(hardware);
+            _context.hardware.Remove(hardware);
             await _context.SaveChangesAsync();
 
             return NoContent();
